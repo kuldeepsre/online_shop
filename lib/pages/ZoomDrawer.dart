@@ -136,7 +136,7 @@ class ZoomDrawer extends StatelessWidget {
               leading: Icon(Icons.logout, color: themeState.iconColor),
               title: Text(
                 AppLocalizations(context.read<LanguageCubit>().state.locale)
-                    .translate(LocalizationKeys.language),
+                    .translate(LocalizationKeys.Logout),
                 textAlign: TextAlign.left,
                 style: textStyles.titleTextStyle,
               ),

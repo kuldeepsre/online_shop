@@ -39,7 +39,7 @@ class LanguageScreen extends StatelessWidget {
                               children: [
                                 CircleAvatar(
                                   backgroundColor: themeState.backgroundColor,
-                                  child: Text("E"),
+                                  child: Text("E",style: textStyles.titleTextStyle,),
                                 ),
                                 Text(
                                   AppLocalizations(context
@@ -77,7 +77,7 @@ class LanguageScreen extends StatelessWidget {
                               children: [
                                 CircleAvatar(
                                   backgroundColor: themeState.backgroundColor,
-                                  child: Text("HI"),
+                                  child: Text("HI",style: textStyles.titleTextStyle,),
                                 ),
                                 Text(
                                   AppLocalizations(context
@@ -117,7 +117,7 @@ class LanguageScreen extends StatelessWidget {
                               children: [
                                 CircleAvatar(
                                   backgroundColor: themeState.backgroundColor,
-                                  child: Text("GE"),
+                                  child: Text("GE",style: textStyles.titleTextStyle,),
                                 ),
                                 Text(
                                   AppLocalizations(context
@@ -137,10 +137,12 @@ class LanguageScreen extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
+
+
                     GestureDetector(
                       onTap: () {
                         BlocProvider.of<LanguageCubit>(context)
-                            .switchToEnglish();
+                            .switchToPunjabi();
                       },
                       child: Card(
                         color: themeState.SecondaryColor,
@@ -156,14 +158,14 @@ class LanguageScreen extends StatelessWidget {
                               children: [
                                 CircleAvatar(
                                   backgroundColor: themeState.backgroundColor,
-                                  child: Text("E"),
+                                  child: Text("P",style: textStyles.titleTextStyle,),
                                 ),
                                 Text(
                                   AppLocalizations(context
                                           .read<LanguageCubit>()
                                           .state
                                           .locale)
-                                      .translate(LocalizationKeys.English),
+                                      .translate(LocalizationKeys.punjabi),
                                   textAlign: TextAlign.left,
                                   style: textStyles.titleTextStyle,
                                 ),
@@ -178,7 +180,7 @@ class LanguageScreen extends StatelessWidget {
                     ),
                     GestureDetector(
                       onTap: () {
-                        BlocProvider.of<LanguageCubit>(context).switchToHindi();
+                        BlocProvider.of<LanguageCubit>(context).switchToGujrati();
                       },
                       child: Card(
                         color: themeState.SecondaryColor,
@@ -194,14 +196,14 @@ class LanguageScreen extends StatelessWidget {
                               children: [
                                 CircleAvatar(
                                   backgroundColor: themeState.backgroundColor,
-                                  child: Text("HI"),
+                                  child: Text("G",style: textStyles.titleTextStyle,),
                                 ),
                                 Text(
                                   AppLocalizations(context
                                           .read<LanguageCubit>()
                                           .state
                                           .locale)
-                                      .translate(LocalizationKeys.Hindi),
+                                      .translate(LocalizationKeys.Gujarati),
                                   textAlign: TextAlign.left,
                                   style: textStyles.titleTextStyle,
                                 ),
@@ -214,43 +216,7 @@ class LanguageScreen extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        BlocProvider.of<LanguageCubit>(context)
-                            .switchToGerman();
-                      },
-                      child: Card(
-                        surfaceTintColor: Colors.deepPurpleAccent,
-                        color: themeState.SecondaryColor,
-                        shadowColor: themeState.textColor,
-                        elevation: 5,
-                        child: Container(
-                          width: MediaQuery.of(context).size.width * 70,
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 18.0, vertical: 8),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                CircleAvatar(
-                                  backgroundColor: themeState.backgroundColor,
-                                  child: Text("GE"),
-                                ),
-                                Text(
-                                  AppLocalizations(context
-                                          .read<LanguageCubit>()
-                                          .state
-                                          .locale)
-                                      .translate(LocalizationKeys.German),
-                                  textAlign: TextAlign.left,
-                                  style: textStyles.titleTextStyle,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+
                   ],
                 ),
               )

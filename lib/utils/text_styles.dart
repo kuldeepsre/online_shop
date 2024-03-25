@@ -16,6 +16,14 @@ class TextStyles {
       fontWeight: FontWeight.normal,
       height: 1// Access textColor from themeState
   );
+  TextStyle get appBarTextStyle => TextStyle(
+      color: themeState.AppBarTextColor,
+      fontFamily: 'Gilroy',
+      fontSize: 20,
+      letterSpacing: 0 ,
+      fontWeight: FontWeight.bold,
+      height: 1// Access textColor from themeState
+  );
 
   TextStyle get subtitleTextStyle => TextStyle(
     fontSize: 18,

@@ -10,6 +10,7 @@ class ThemeState {
   final Color backgroundColor;
   final Color SecondaryColor;
   final Color textColor;
+  final Color AppBarTextColor;
   final Color iconColor;
   final bool isDarkTheme;
   ThemeState({
@@ -17,6 +18,7 @@ class ThemeState {
     required this.backgroundColor,
     required this.SecondaryColor,
     required this.textColor,
+    required this.AppBarTextColor,
     required this.iconColor,
     required this.isDarkTheme,
   });
@@ -27,8 +29,9 @@ class ThemeCubit extends Cubit<ThemeState> {
       : super(ThemeState(
     themeData: isDarkTheme ? ThemeData.dark() : ThemeData.light(),
     backgroundColor: isDarkTheme ?   const Color.fromRGBO(9, 18, 39, 1) : Colors.white,
-    SecondaryColor:isDarkTheme?  const Color.fromRGBO(16, 27, 54, 1.0) : Colors.white,
+    SecondaryColor:isDarkTheme?   Color.fromRGBO(16, 27, 54, 1.0) : Color.fromRGBO(16, 27, 54, 1.0),
     textColor: isDarkTheme ? Colors.white : Colors.black ,
+    AppBarTextColor: isDarkTheme ? Colors.white :Colors.white,
     iconColor: isDarkTheme ? Colors.white :  Colors.black ,
     isDarkTheme: isDarkTheme,
   ));
@@ -42,7 +45,8 @@ class ThemeCubit extends Cubit<ThemeState> {
       textColor: currentState.textColor == Colors.black ? Colors.white : Colors.black,
       iconColor: currentState.iconColor == Colors.black ? Colors.white : Colors.black,
       isDarkTheme: !currentState.isDarkTheme,
-      SecondaryColor: const Color.fromRGBO(16, 27, 54, 1.0) ,
+      SecondaryColor: currentState.textColor == Colors.black? const Color.fromRGBO(9, 18, 39, 1) : Colors.white,
+      AppBarTextColor: currentState.textColor == Colors.black?Colors.white : Colors.white,
     );
     emit(newThemeState);
     _saveThemeToStorage(newThemeState.isDarkTheme);
@@ -68,6 +72,15 @@ class LanguageCubit extends Cubit<LanguageState> {
   // Method to switch to Hindi and save the selected language to storage
   void switchToHindi() async {
     const newLocale = Locale('hi');
+    emit(LanguageState(newLocale));
+    _saveLanguageToStorage(newLocale);
+  }
+ void switchToPunjabi() async {
+    const newLocale = Locale('pa');
+    emit(LanguageState(newLocale));
+    _saveLanguageToStorage(newLocale);
+  } void switchToGujrati() async {
+    const newLocale = Locale('gu');
     emit(LanguageState(newLocale));
     _saveLanguageToStorage(newLocale);
   }

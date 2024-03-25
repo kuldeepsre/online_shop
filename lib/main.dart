@@ -77,11 +77,13 @@ class MyApp extends StatelessWidget {
                     Locale('en', 'US'),
                     Locale('hi', 'IN'),
                     Locale('de', 'DE'),
+                    Locale('pa', 'IN'), // Punjabi
+                    Locale('gu', 'IN'), // Gujarati
                   ],
                   debugShowCheckedModeBanner: false,
                   initialRoute: '/',
                   routes: {
-                    '/': (context) => HomePage(),
+                    '/': (context) => DashboardScrreen(),
                       // '/languageScreen': (context) => LanguageScreen(),
                     // '/settings': (context) => SettingsScreen(),
                     // '/categories': (context) => CategoriesScreen(),

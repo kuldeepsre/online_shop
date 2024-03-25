@@ -1,5 +1,5 @@
 class LocalizationKeys {
-  static const title = 'title';
+  static const title = '';
   static const welcomeMessage = 'welcomeMessage';
   static const toggleTheme = 'toggleTheme';
   static const toggleLanguage = 'toggleLanguage';
@@ -47,5 +47,9 @@ class LocalizationKeys {
   static String English="English";
   static String German="German";
   static String Hindi="Hindi";
+  static String punjabi="punjabi";
+  static String Gujarati="Gujarati";
+
+  static String Language="Language";
 
 }
