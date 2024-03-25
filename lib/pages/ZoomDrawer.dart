@@ -46,7 +46,7 @@ class ZoomDrawer extends StatelessWidget {
               ),
               onTap: () {
                 BlocProvider.of<NavigationBloc>(context)
-                    .add(GoToHomeEvent(title: "Home"));
+                    .add(GoToHomeEvent());
                 Navigator.pop(context);
               },
             ),
@@ -65,7 +65,7 @@ class ZoomDrawer extends StatelessWidget {
               ),
               onTap: () {
                 BlocProvider.of<NavigationBloc>(context)
-                    .add(GoToProfileEvent(title: "PRofile"));
+                    .add(GoToProfileEvent());
                 Navigator.pop(context);
               },
             ),
@@ -83,7 +83,7 @@ class ZoomDrawer extends StatelessWidget {
               ),
               onTap: () {
                 BlocProvider.of<NavigationBloc>(context)
-                    .add(GoToPageViewMoreEvent(title: "View More"));
+                    .add(GoToPageViewMoreEvent());
                 Navigator.pop(context);
               },
             ),
@@ -101,7 +101,7 @@ class ZoomDrawer extends StatelessWidget {
               ),
               onTap: () {
                 BlocProvider.of<NavigationBloc>(context)
-                    .add(GoToPageSettingEvent(title: "setting"));
+                    .add(GoToPageSettingEvent());
                 Navigator.pop(context);
               },
             ),

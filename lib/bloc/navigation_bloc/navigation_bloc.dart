@@ -4,23 +4,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // Enum for navigation events
 // Custom classes for navigation events
 class GoToHomeEvent {
-  String title;
-  GoToHomeEvent({required this.title});
+
 }
 
 class GoToProfileEvent{
-String title;
-GoToProfileEvent({required this.title});
+
 }
 
 class GoToPageViewMoreEvent {
-  String title;
-  GoToPageViewMoreEvent({required this.title});
+
 }
 
 class GoToPageSettingEvent {
-  String title;
-  GoToPageSettingEvent({required this.title});
+  // String title;
+  // GoToPageSettingEvent({required this.title});
 }
 class GoToPageLanguageEvent {
 

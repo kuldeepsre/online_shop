@@ -13,6 +13,7 @@ class ThemeState {
   final Color AppBarTextColor;
   final Color iconColor;
   final bool isDarkTheme;
+
   ThemeState({
     required this.themeData,
     required this.backgroundColor,
