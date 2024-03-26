@@ -26,19 +26,25 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   http: ^1.1.0
-  dio: ^5.4.1
+
   flutter_bloc: ^8.1.4
   equatable: ^2.0.5
 
   flutter_localizations:
     sdk: flutter
   shared_preferences: ^2.2.2
+  retrofit: ^4.1.0
+
+  json_annotation: ^4.8.1
+  build_runner: ^2.4.8
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
+  retrofit_generator: ^8.1.0
+  dio: ^5.4.1
   flutter_lints: ^2.0.0
 
 flutter:

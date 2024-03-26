@@ -1,14 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:online_shop/pages/user_screen.dart';
 
+import '../SOILD/srp.dart';
 import '../bloc/categores_bloc/categories_bloc.dart';
 import '../bloc/game/game_bloc.dart';
 import '../bloc/them/ThemeCubit.dart';
+import '../utils/text_styles.dart';
 import 'GameWidget.dart';
 
 // Home page
 class HomeScreen extends StatelessWidget {
+  void onItemPressed(String item) {
+    print('Item pressed: $item');
+    // Do whatever action you want to perform when an item is pressed
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -56,7 +64,17 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
               ),
-          /*    Expanded(
+            /*  Expanded(
+                child: ItemListWidget(
+                  items: ['Item 1', 'Item 2', 'Item 3'],
+                  // Passing callback function to the child widget
+                  onItemSelected: onItemPressed,
+                ),
+              ),*/
+              Expanded(child: UserPage())
+
+
+              /*    Expanded(
                 child:  BlocBuilder<GameBloc, GameState>(
                   builder: (context, state) {
                     return Card(
@@ -125,7 +143,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),*/
 
-           /*   Expanded(child: GameWidget(ballCount: 1,))*/
+              /*   Expanded(child: GameWidget(ballCount: 1,))*/
             ],
           );
         } else if (state is CategoriesError) {

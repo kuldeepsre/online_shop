@@ -106,7 +106,6 @@ class _MotionTabControllerState extends State<MotionTabController> {
         return Text(
           widget.labels[index],
           style: TextStyle(
-
             color: _selectedIndex == index ? widget.tabSelectedColor : widget.tabIconColor,
               fontFamily: 'Gilroy',
               fontSize: 12,
