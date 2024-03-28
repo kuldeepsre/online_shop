@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "874929202331",
+    "project_id": "petonline-3e617",
+    "storage_bucket": "petonline-3e617.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874929202331:android:6fbe46b179c1de9b84523e",
+        "android_client_info": {
+          "package_name": "com.onlineshop.online_shop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWuKliw6WbgUDUdReOjZgR7cJ6mVJOqI8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
