@@ -1,9 +1,7 @@
-import 'package:firebase_remote_config/firebase_remote_config.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
-
 import 'package:online_shop/pages/dashboard_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'AppLocalizations.dart';
@@ -14,11 +12,8 @@ import 'bloc/setting_bloc/settings_bloc.dart';
 import 'bloc/them/ThemeCubit.dart';
 import 'bloc/view_more_bloc/view_more_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
-
 import 'constants/config.dart';
 import 'constants/urls.dart';
-
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Load the stored theme preference
@@ -36,11 +31,11 @@ Future<void> main() async {
   print(AppUrls.backendBaseUrl);
   runApp(MyApp(isDarkTheme: isDarkTheme,  locale: locale,));
 }
-
 Future<bool> _loadThemeFromStorage() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   return prefs.getBool('isDarkTheme') ?? false; // Default to light theme if not found
 }
+
 Future<Locale> _loadLanguageFromStorage() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   final languageCode = prefs.getString('languageCode') ?? 'en'; // Default to English if not found
