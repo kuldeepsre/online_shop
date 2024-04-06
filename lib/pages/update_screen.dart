@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 class UpdateScreen extends StatelessWidget {
   static const PLAY_STORE_URL = 'my playstore url here';
   static const APP_STORE_URL = 'my appstore url here';
@@ -24,7 +24,7 @@ class UpdateScreen extends StatelessWidget {
               style: TextStyle(fontSize: 16),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 16),
+
             ElevatedButton(
               child: const Text('Update Now'),
               onPressed: () {
@@ -54,10 +54,10 @@ class UpdateScreen extends StatelessWidget {
   }
 
   _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
+    // if (await canLaunch(url)) {
+    //   await launch(url);
+    // } else {
+    //   throw 'Could not launch $url';
+    // }
   }
 }

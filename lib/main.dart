@@ -14,20 +14,22 @@ import 'bloc/view_more_bloc/view_more_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'constants/config.dart';
 import 'constants/urls.dart';
+import 'notification_service.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Load the stored theme preference
   final isDarkTheme = await _loadThemeFromStorage();
   final locale = await _loadLanguageFromStorage();
-  await Firebase.initializeApp(options: FirebaseOptions(apiKey: 'AIzaSyDWuKliw6WbgUDUdReOjZgR7cJ6mVJOqI8',appId: '1:874929202331:android:6fbe46b179c1de9b84523e',messagingSenderId: '874929202331',projectId: 'petonline-3e617'));
+  await Firebase.initializeApp(options: const FirebaseOptions(apiKey: 'AIzaSyDWuKliw6WbgUDUdReOjZgR7cJ6mVJOqI8',appId: '1:874929202331:android:6fbe46b179c1de9b84523e',messagingSenderId: '874929202331',projectId: 'petonline-3e617'));
   // Firebase Core setup
   /*  await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );*/
 
   // Remote Config Setup
+  NotificationService().initialize();
   await remoteConfig();
-  //final bool updateRequired = await isUpdateRequired();
+ // final bool updateRequired = await isUpdateRequired();
   print(AppUrls.backendBaseUrl);
   runApp(MyApp(isDarkTheme: isDarkTheme,  locale: locale,));
 }

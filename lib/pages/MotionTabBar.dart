@@ -14,7 +14,7 @@ class MotionTabController extends StatefulWidget {
   final List<IconData> icons;
   final TabFormat tabFormat;
 
-  MotionTabController({
+   const MotionTabController({
     required this.initialSelectedTab,
     required this.tabBarHeight,
     required this.tabIconColor,

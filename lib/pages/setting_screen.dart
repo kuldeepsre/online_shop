@@ -7,7 +7,6 @@ import '../bloc/them/ThemeCubit.dart';
 class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     final themeState = context.watch<ThemeCubit>().state;
     return Scaffold(
       backgroundColor: themeState.backgroundColor,
@@ -16,7 +15,7 @@ class SettingsScreen extends StatelessWidget {
           onPressed: () {
             Navigator.pushNamed(context, '/Settings');
           },
-          child: Text('Settings'),
+          child: const Text('Settings'),
         ),
       ),
     );

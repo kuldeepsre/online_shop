@@ -9,17 +9,17 @@ import '../utils/text_styles.dart';
 import '../widget/loading_shimer.dart';
 
 class UserPage extends StatefulWidget {
+  const UserPage({super.key});
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<UserPage> {
   final UserBloc _userBloc = UserBloc(); // Create an instance of UserBloc
-
   @override
   void initState() {
     super.initState();
-    _userBloc.fetchUsers(); // Call fetchUsers method to fetch users
+    _userBloc.fetchUsers();
   }
 
   @override
