@@ -1,9 +1,10 @@
+/*
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/categores_bloc/categories_bloc.dart';
-import '../model_response/Category.dart';
+import '../model/product.dart';
+
+
 
 
 // Products list widget
@@ -46,7 +47,7 @@ class ProductsGrid extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
-                  '\$${product.price.toStringAsFixed(2)}',
+                  '\$${product.price?.toStringAsFixed(2)}',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ),
@@ -80,3 +81,4 @@ class ProductsGrid extends StatelessWidget {
 }
 
 
+*/

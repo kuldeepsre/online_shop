@@ -5,8 +5,10 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:online_shop/pages/dashboard_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'AppLocalizations.dart';
-import 'bloc/categores_bloc/categories_bloc.dart';
+import 'bloc/cart/cart_bloc.dart';
+
 import 'bloc/navigation_bloc/navigation_bloc.dart';
+import 'bloc/product/product_bloc.dart';
 import 'bloc/profile_bloc/profile_bloc.dart';
 import 'bloc/setting_bloc/settings_bloc.dart';
 import 'bloc/them/ThemeCubit.dart';
@@ -58,11 +60,12 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => ProfileBloc()),
         BlocProvider(create: (_) => SettingsBloc()),
-        BlocProvider(create: (_) => CategoriesBloc()),
+
         BlocProvider(create: (_) => ViewMoreBloc()),
         BlocProvider(create: (_) => NavigationBloc()),
-        BlocProvider(create: (_) => CategoriesBloc()..add(LoadCategories())),
-        BlocProvider(create: (_) => ProductsBloc(0)),
+        BlocProvider(create: (context) => ProductBloc()..add(GetProductList())),
+        BlocProvider(
+            create: (context) => CartBloc()..add(LoadProductCounter())),
         BlocProvider<ThemeCubit>(
           create: (_) => ThemeCubit(isDarkTheme: isDarkTheme),
         ),

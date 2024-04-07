@@ -12,9 +12,11 @@ import '../bloc/navigation_bloc/navigation_bloc.dart';
 import '../bloc/them/ThemeCubit.dart';
 import '../common_button/LocalizationKeys.dart';
 import '../utils/text_styles.dart';
+import 'CartPage.dart';
 import 'MotionTabBar.dart';
 import 'ZoomDrawer.dart';
 import 'home_screen_page.dart';
+
 
 class DashboardScrreen extends StatelessWidget {
   @override
@@ -99,7 +101,7 @@ class DashboardScrreen extends StatelessWidget {
 
             onTabItemSelected: (String tabName) {
               // Dispatch navigation events based on the selected tab
-              switch (tabName) {
+              switch (NavigationBloc) {
                 case "Dashboard":
                   BlocProvider.of<NavigationBloc>(context).add(GoToHomeEvent());
                   break;
