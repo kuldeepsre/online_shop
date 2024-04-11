@@ -62,8 +62,7 @@ class FirebaseApi {
       }
     });
   }
-
-  Future initLocalNotification() async {
+   Future initLocalNotification() async {
     const android = AndroidInitializationSettings('@mipmap/ic_launcher');
     const settings = InitializationSettings(android: android);
     await localNotification.initialize(

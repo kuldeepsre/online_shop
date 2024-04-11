@@ -19,7 +19,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'constants/config.dart';
 import 'constants/urls.dart';
 import 'firebaseApi.dart';
-import 'notification_service.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Load the stored theme preference
