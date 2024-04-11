@@ -18,6 +18,7 @@ import 'bloc/view_more_bloc/view_more_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'constants/config.dart';
 import 'constants/urls.dart';
+import 'firebaseApi.dart';
 import 'notification_service.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,7 +32,8 @@ Future<void> main() async {
   );*/
 
   // Remote Config Setup
-  NotificationService().initialize();
+  await FirebaseApi().initNotification();
+ // NotificationService().initialize();
   await remoteConfig();
  // final bool updateRequired = await isUpdateRequired();
   print(AppUrls.backendBaseUrl);

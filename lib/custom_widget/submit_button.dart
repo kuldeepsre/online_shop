@@ -5,7 +5,6 @@ class CustomSubmitButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final Color color;
-
   const CustomSubmitButton({
      Key ? key,
     required this.text,
@@ -16,9 +15,7 @@ class CustomSubmitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-
       onPressed: onPressed,
-
       child: Text(
         text,
         style: TextStyle(color: Colors.white),
