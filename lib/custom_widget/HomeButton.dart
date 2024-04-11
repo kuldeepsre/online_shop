@@ -10,9 +10,7 @@ import '../main.dart';
 class HomeButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String buttonText;
-
   const HomeButton({required this.onPressed, required this.buttonText});
-
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(

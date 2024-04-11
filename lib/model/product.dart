@@ -1,48 +1,43 @@
 class Product {
-  String? id;
-  String? name;
-  String? category;
+  int? id;
+  String? title;
+  String? description;
+  int? price;
+  double? discountPercentage;
+  double? rating;
+  int? stock;
   String? brand;
-  String? model;
-  double? price;
-  String? colour;
-  String? weight;
-  String? imageUrl;
+  String? category;
+  String? thumbnail;
+  List<String>? images;
 
-  Product(
-      {this.id,
-        this.name,
-        this.category,
-        this.brand,
-        this.model,
-        this.price,
-        this.colour,
-        this.weight,
-        this.imageUrl});
+  Product({
+    this.id,
+    this.title,
+    this.description,
+    this.price,
+    this.discountPercentage,
+    this.rating,
+    this.stock,
+    this.brand,
+    this.category,
+    this.thumbnail,
+    this.images,
+  });
 
-  Product.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    name = json['name'];
-    category = json['category'];
-    brand = json['brand'];
-    model = json['model'];
-    price = json['price'];
-    colour = json['colour'];
-    weight = json['weight'];
-    imageUrl = json['image'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = id;
-    data['name'] = name;
-    data['category'] = category;
-    data['brand'] = brand;
-    data['model'] = model;
-    data['price'] = price;
-    data['colour'] = colour;
-    data['weight'] = weight;
-    data['image'] = imageUrl;
-    return data;
+  factory Product.fromJson(Map<String, dynamic> json) {
+    return Product(
+      id: json['id'],
+      title: json['title'],
+      description: json['description'],
+      price: json['price'],
+      discountPercentage: json['discountPercentage'],
+      rating: json['rating'],
+      stock: json['stock'],
+      brand: json['brand'],
+      category: json['category'],
+      thumbnail: json['thumbnail'],
+      images: List<String>.from(json['images']),
+    );
   }
 }

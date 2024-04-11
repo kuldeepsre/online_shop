@@ -7,7 +7,7 @@ import 'package:online_shop/pages/product_page.dart';
 import 'package:online_shop/pages/search_page.dart';
 
 import '../Api_Services/response_model.dart';
-import '../bloc/product/product_bloc.dart';
+
 import '../model/product.dart';
 import '../utils/palette.dart';
 import '../utils/spacing.dart';
@@ -92,7 +92,7 @@ class _HomePageState extends State<HomeScreen> {
               Spacing(
                 height: 30,
               ),
-              _buildSearchBox(),
+       //       _buildSearchBox(),
               Spacing(
                 height: 30,
               ),
@@ -107,7 +107,7 @@ class _HomePageState extends State<HomeScreen> {
               Spacing(
                 height: 20,
               ),
-              _buildCategories(),
+         //     _buildCategories(),
               Spacing(
                 height: 20,
               ),
@@ -122,7 +122,7 @@ class _HomePageState extends State<HomeScreen> {
               Spacing(
                 height: 10,
               ),
-              _buildListProduct()
+        //      _buildListProduct()
             ],
           ),
         ),
@@ -130,14 +130,14 @@ class _HomePageState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildSearchBox() {
+/*  Widget _buildSearchBox() {
     return BlocBuilder<ProductBloc, ProductState>(
       builder: (context, state) {
         models.clear();
         products.clear();
         if (state is ProductLoaded) {
           for (Product product in state.responseModel.products!) {
-            models.add(product.model.toString());
+            models.add(product.title.toString());
             products.add(product);
           }
         }
@@ -398,7 +398,7 @@ class _HomePageState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      model.products![index].model.toString(),
+                      model.products![index].stock.toString(),
                       textAlign: TextAlign.left,
                       style: const TextStyle(
                           color: Palette.textColor,
@@ -420,7 +420,7 @@ class _HomePageState extends State<HomeScreen> {
                 ),
                 Center(
                   child: Image.network(
-                    model.products![index].imageUrl.toString(),
+                    model.products![index].thumbnail.toString(),
                     cacheHeight: 90,
                   ),
                 )
@@ -430,7 +430,7 @@ class _HomePageState extends State<HomeScreen> {
         );
       },
     );
-  }
+  }*/
 
   Widget _buildLoading() => const Center(child: CircularProgressIndicator());
 }

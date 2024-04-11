@@ -2,13 +2,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:online_shop/pages/dashboard_screen.dart';
+
+import 'package:online_shop/pages/login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'AppLocalizations.dart';
 import 'bloc/cart/cart_bloc.dart';
 
+import 'bloc/login_bloc/authentication_bloc.dart';
 import 'bloc/navigation_bloc/navigation_bloc.dart';
-import 'bloc/product/product_bloc.dart';
+
 import 'bloc/profile_bloc/profile_bloc.dart';
 import 'bloc/setting_bloc/settings_bloc.dart';
 import 'bloc/them/ThemeCubit.dart';
@@ -46,6 +48,7 @@ Future<Locale> _loadLanguageFromStorage() async {
   final countryCode = prefs.getString('countryCode') ?? ''; // Default to empty string if not found
   return Locale(languageCode, countryCode);
 }
+
 class MyApp extends StatelessWidget {
   final bool isDarkTheme;
   final Locale locale;
@@ -53,24 +56,22 @@ class MyApp extends StatelessWidget {
     required this.isDarkTheme,
     required this.locale,
   });
-
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => ProfileBloc()),
+        BlocProvider(create: (_) => AuthenticationBloc()),
         BlocProvider(create: (_) => SettingsBloc()),
-
         BlocProvider(create: (_) => ViewMoreBloc()),
         BlocProvider(create: (_) => NavigationBloc()),
-        BlocProvider(create: (context) => ProductBloc()..add(GetProductList())),
+     //   BlocProvider(create: (context) => ProductBloc()..add(GetProductList())),
         BlocProvider(
             create: (context) => CartBloc()..add(LoadProductCounter())),
         BlocProvider<ThemeCubit>(
           create: (_) => ThemeCubit(isDarkTheme: isDarkTheme),
         ),
         BlocProvider<LanguageCubit>(create: (context) => LanguageCubit(locale: locale)),
-
       ],
       child: BlocBuilder<ThemeCubit, ThemeState>(
         builder: (themeContext, themeState) {
@@ -95,7 +96,8 @@ class MyApp extends StatelessWidget {
                   debugShowCheckedModeBanner: false,
                   initialRoute: '/',
                   routes: {
-                    '/': (context) => DashboardScrreen(),
+                    '/': (context) => LoginScreen(),
+             /*       '/': (context) => DashboardScrreen(),*/
                       // '/languageScreen': (context) => LanguageScreen(),
                     // '/settings': (context) => SettingsScreen(),
                     // '/categories': (context) => CategoriesScreen(),

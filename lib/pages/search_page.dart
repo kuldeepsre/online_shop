@@ -49,7 +49,7 @@ class ProductSearchDelegate extends SearchDelegate {
           onTap: () {
             Product product = Product();
             for (Product element in products) {
-              if (element.model == allResults[index]) {
+              if (element.title == allResults[index]) {
                 product = element;
               }
             }
@@ -81,7 +81,7 @@ class ProductSearchDelegate extends SearchDelegate {
             onTap: () {
               Product product = Product();
               for (Product element in products) {
-                if (element.model == suggestion) {
+                if (element.title == suggestion) {
                   product = element;
                 }
               }

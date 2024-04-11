@@ -36,10 +36,13 @@ dependencies:
   eva_icons_flutter: ^3.1.0
   like_button: ^2.0.5
   flutter_svg: ^2.0.10+1
+  injectable: ^2.3.2
+  get_it: ^7.6.7
 dev_dependencies:
   flutter_test:
     sdk: flutter
   retrofit_generator: ^8.1.0
+  injectable_generator: ^2.4.1
   dio: ^5.4.1
   flutter_lints: ^2.0.0
 

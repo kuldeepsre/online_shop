@@ -10,7 +10,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../AppLocalizations.dart';
 import '../bloc/navigation_bloc/navigation_bloc.dart';
 import '../bloc/them/ThemeCubit.dart';
-import '../common_button/LocalizationKeys.dart';
+
+import '../custom_widget/LocalizationKeys.dart';
 import '../utils/text_styles.dart';
 import 'CartPage.dart';
 import 'MotionTabBar.dart';

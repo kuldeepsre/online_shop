@@ -98,7 +98,7 @@ class _ProductPageState extends State<ProductPage> {
         SizedBox(
           height: getHeight(context) / 2.35,
           child: Image.network(
-            widget.product.imageUrl.toString(),
+            widget.product.thumbnail.toString(),
           ),
         ),
         Container(
@@ -112,7 +112,7 @@ class _ProductPageState extends State<ProductPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                widget.product.model.toString(),
+                widget.product.title.toString(),
                 textAlign: TextAlign.left,
                 style: const TextStyle(
                     color: Palette.textColor,
@@ -152,7 +152,7 @@ class _ProductPageState extends State<ProductPage> {
                             color: Palette.textColor,
                             fontSize: 20,
                             fontWeight: FontWeight.bold)),
-                    Text(widget.product.colour.toString(),
+                    Text(widget.product.category.toString(),
                         style: const TextStyle(
                             color: Palette.textColor, fontSize: 20)),
                   ]),
@@ -162,7 +162,7 @@ class _ProductPageState extends State<ProductPage> {
                             color: Palette.textColor,
                             fontSize: 20,
                             fontWeight: FontWeight.bold)),
-                    Text(widget.product.weight.toString(),
+                    Text(widget.product.stock.toString(),
                         style: const TextStyle(
                             color: Palette.textColor, fontSize: 20)),
                   ]),

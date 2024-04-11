@@ -195,14 +195,14 @@ class _CartPageState extends State<CartPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Image.network(
-                    products[index].imageUrl.toString(),
+                    products[index].thumbnail.toString(),
                     cacheHeight: 70,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        products[index].model.toString(),
+                        products[index].stock.toString(),
                         textAlign: TextAlign.left,
                         style: const TextStyle(
                             color: Palette.white,
