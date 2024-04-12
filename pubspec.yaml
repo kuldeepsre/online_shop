@@ -39,6 +39,7 @@ dependencies:
   injectable: ^2.3.2
   get_it: ^7.6.7
   order_tracker: ^0.0.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -46,7 +47,8 @@ dev_dependencies:
   injectable_generator: ^2.4.1
   dio: ^5.4.1
   flutter_lints: ^2.0.0
-
+  flutter_stripe: ^5.0.0
+  flutter_dotenv: ^5.0.2
 flutter:
 
   uses-material-design: true

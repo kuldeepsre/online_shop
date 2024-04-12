@@ -28,6 +28,8 @@ class OderTracker  extends StatelessWidget {
 }
 
 class OrderTrackerWidget extends StatelessWidget {
+  const OrderTrackerWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<OrderTrackerBloc, OrderTrackerState>(

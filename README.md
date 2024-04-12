@@ -22,3 +22,4 @@ samples, guidance on mobile development, and a full API reference.
 ## flutter pub get
 
 ## flutter packages pub run build_runner build --delete-conflicting-outputs  
+# https://medium.com/@Ikay_codes/integrate-payment-in-flutter-with-stripe-13e96fdc2e9e
