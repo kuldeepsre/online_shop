@@ -1,0 +1,17 @@
+{
+  "order": [
+    {"text": "Your order has been placed", "date": "Fri, 25th Mar '22 - 10:47pm"},
+    {"text": "Seller ha processed your order", "date": "Sun, 27th Mar '22 - 10:19am"},
+    {"text": "Your item has been picked up by courier partner.", "date": "Tue, 29th Mar '22 - 5:00pm"}
+  ],
+  "shipped": [
+    {"text": "Your order has been shipped", "date": "Tue, 29th Mar '22 - 5:04pm"},
+    {"text": "Your item has been received in the nearest hub to you.", "date": null}
+  ],
+  "out_of_delivery": [
+    {"text": "Your order is out for delivery", "date": "Thu, 31st Mar '22 - 2:27pm"}
+  ],
+  "delivered": [
+    {"text": "Your order has been delivered", "date": "Thu, 31st Mar '22 - 3:58pm"}
+  ]
+}

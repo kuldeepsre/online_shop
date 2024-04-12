@@ -2,15 +2,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
 import 'package:online_shop/pages/login.dart';
+import 'package:online_shop/pages/oder_tracker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'AppLocalizations.dart';
 import 'bloc/cart/cart_bloc.dart';
-
 import 'bloc/login_bloc/authentication_bloc.dart';
 import 'bloc/navigation_bloc/navigation_bloc.dart';
-
 import 'bloc/profile_bloc/profile_bloc.dart';
 import 'bloc/setting_bloc/settings_bloc.dart';
 import 'bloc/them/ThemeCubit.dart';
@@ -98,8 +96,9 @@ class MyApp extends StatelessWidget {
                   debugShowCheckedModeBanner: false,
                   initialRoute: '/',
                   routes: {
-                    '/': (context) => LoginScreen(),
-             /*       '/': (context) => DashboardScrreen(),*/
+                    '/': (context) => OderTracker(),
+                 //   '/': (context) => LoginScreen(),
+                /*       '/': (context) => DashboardScrreen(),*/
                       // '/languageScreen': (context) => LanguageScreen(),
                     // '/settings': (context) => SettingsScreen(),
                     // '/categories': (context) => CategoriesScreen(),
