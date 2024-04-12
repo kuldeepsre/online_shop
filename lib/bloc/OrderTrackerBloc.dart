@@ -51,7 +51,14 @@ class OrderTrackerState {
 class OrderTrackerEvent {}
 
 class FetchOrderData extends OrderTrackerEvent {}
+class SelectOrderEvent extends OrderTrackerEvent {
+  final String orderId;
 
+  SelectOrderEvent({required this.orderId});
+
+  @override
+  List<Object?> get props => [orderId];
+}
 class OrderTrackerBloc extends Bloc<OrderTrackerEvent, OrderTrackerState> {
   OrderTrackerBloc() : super(OrderTrackerState(status: OrderTrackerStatus.initial));
 
