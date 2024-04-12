@@ -3,67 +3,66 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:order_tracker/order_tracker.dart';
+import 'package:shimmer/shimmer.dart';
+
+
+import '../bloc/OrderTrackerBloc.dart';
+import '../bloc/them/ThemeCubit.dart';
+import '../components/loading_page.dart';
 
 
 
 
-class OderTracker extends StatefulWidget {
-  const OderTracker({Key? key}) : super(key: key);
+class OderTracker  extends StatelessWidget {
 
-  @override
-  State<OderTracker> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<OderTracker> {
-  List<TextDto> orderList = [];
-  List<TextDto> shippedList = [];
-  List<TextDto> outOfDeliveryList = [];
-  List<TextDto> deliveredList = [];
-
-  Future<void> fetchData() async {
-    final String jsonString = await rootBundle.loadString('assets/order_data.json');
-    final Map<String, dynamic> data = json.decode(jsonString);
-    setState(() {
-      orderList = (data['order'] as List)
-          .map((item) => TextDto(item['text'], item['date']))
-          .toList();
-      shippedList = (data['shipped'] as List)
-          .map((item) => TextDto(item['text'], item['date']))
-          .toList();
-      outOfDeliveryList = (data['out_of_delivery'] as List)
-          .map((item) => TextDto(item['text'], item['date']))
-          .toList();
-      deliveredList = (data['delivered'] as List)
-          .map((item) => TextDto(item['text'], item['date']))
-          .toList();
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    fetchData();
-  }
 
   @override
   Widget build(BuildContext context) {
+    final themeState = context.watch<ThemeCubit>().state;
     return Scaffold(
+      backgroundColor: themeState.backgroundColor,
       appBar: AppBar(
+        backgroundColor: themeState.backgroundColor,
         title: const Text("Order Tracker Demo"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: OrderTracker(
-          status: Status.delivered,
-          activeColor: Colors.green,
-          inActiveColor: Colors.grey[300],
-          orderTitleAndDateList: orderList,
-          shippedTitleAndDateList: shippedList,
-          outOfDeliveryTitleAndDateList: outOfDeliveryList,
-          deliveredTitleAndDateList: deliveredList,
-        ),
+      body: BlocProvider(
+        create: (context) => OrderTrackerBloc(),
+        child: OrderTrackerWidget(),
       ),
     );
   }
 }
+
+class OrderTrackerWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<OrderTrackerBloc, OrderTrackerState>(
+      builder: (context, state) {
+        if (state.status == OrderTrackerStatus.loading) {
+          return  Center(
+            child:LoadingPage(),
+          );
+        } else if (state.status == OrderTrackerStatus.error) {
+          return Center(
+            child: Text("Error: ${state.error}"),
+          );
+        } else {
+          return OrderTracker(
+            status: Status.delivered,
+            activeColor: Colors.green,
+            inActiveColor: Colors.grey[300],
+            orderTitleAndDateList: state.orderList,
+            shippedTitleAndDateList: state.shippedList,
+            outOfDeliveryTitleAndDateList: state.outOfDeliveryList,
+            deliveredTitleAndDateList: state.deliveredList,
+          );
+        }
+      },
+    );
+  }
+}
+
+

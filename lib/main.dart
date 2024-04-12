@@ -2,10 +2,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:online_shop/pages/login.dart';
+
 import 'package:online_shop/pages/oder_tracker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'AppLocalizations.dart';
+
+import 'bloc/OrderTrackerBloc.dart';
 import 'bloc/cart/cart_bloc.dart';
 import 'bloc/login_bloc/authentication_bloc.dart';
 import 'bloc/navigation_bloc/navigation_bloc.dart';
@@ -65,6 +67,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => SettingsBloc()),
         BlocProvider(create: (_) => ViewMoreBloc()),
         BlocProvider(create: (_) => NavigationBloc()),
+        BlocProvider<OrderTrackerBloc>(create: (context) => OrderTrackerBloc()),
+
      //   BlocProvider(create: (context) => ProductBloc()..add(GetProductList())),
         BlocProvider(
             create: (context) => CartBloc()..add(LoadProductCounter())),

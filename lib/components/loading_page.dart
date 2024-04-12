@@ -3,7 +3,7 @@ import 'package:velocity_x/velocity_x.dart';
 
 
 class LoadingPage extends StatelessWidget {
-  const LoadingPage({required Key key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
